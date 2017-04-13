@@ -62,6 +62,17 @@ incumbent_boxplot.plot <- ggplot(data = data_figs_state_sum, aes(x = civil_war,
                                 geom_hline(yintercept = 50) + 
                                 scale_fill_manual(values = c("blue", "red"))
 
+incumbent_barplot.plot <-ggplot(data=data_figs_sum, aes(x=civil_war, y=mean,
+                                        fill = incumbent_party)) +
+                            geom_bar(stat = "identity", position = "dodge") +
+                            geom_errorbar(aes(ymin = se_low,
+                                          ymax=se_high),
+                                        width = 0.2,
+                                        position = position_dodge(0.9))
+
+                            
+    
+
 
 
 
